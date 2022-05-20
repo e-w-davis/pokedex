@@ -27,11 +27,18 @@ app.get("/pokemon", (req, res) => {
 });
 
 //N(ew)
+
 app.put("/pokemon/:id", (req, res) => {
     poke[req.params.id] = req.body
     res.redirect("/pokemon")
 })
+
 //D(elete)
+
+app.delete("/pokemon/:id", (req, res) => {
+    poke.splice(req.params.id, 1)
+    res.redirect("/pokemon")
+});
 
 //U(pdate)
 
