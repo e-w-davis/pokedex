@@ -50960,5 +50960,3 @@ const poke = [
 ];
 
 module.exports = poke
-
-console.log(module)
