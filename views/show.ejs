@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>See Pokemon Details</title>
+  </head>
+  <body>
+    <div class="container">
+        <br>
+            <h1><%=poke.name; %></h1>
+        </br>
+            <img src=<%=poke.img%>></br>
+            Type: <%=poke.type; %>
+        </br>
+        </br>
+            HP: <%=poke.stats.hp%></br>
+            Attack: <%=poke.stats.attack%></br>
+            Defense: <%=poke.stats.defense%></br>
+        </br>
+        </br>
+            <a href="/pokemon">Back to Pokedex</a>
+    </div>
+  </body>
+</html>

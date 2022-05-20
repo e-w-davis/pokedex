@@ -1,0 +1,19 @@
+<header>
+    <h1>OG 151 Pokedex</h1>
+</header>
+
+<main>
+    <div class="container">
+        <h2> The Pokemanz</h2>
+        <ul>
+            <% for(let i = 0; i < poke.length; i++) {%>
+                <li>
+                    <img src=<%=poke[i].img%>></br>
+                    <a href="/pokemon/<%=i%>"><%=poke[i].name%></a>
+                </li>
+                </br>
+                </br>
+            <%}%>
+        </ul>
+    </div>
+</main>
