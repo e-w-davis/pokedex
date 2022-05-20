@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Edit Pokemanz</title>
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
+    <h1>Edit Pokemanz</h1>
+    <!--  ADD action attribute to form tag-->
+    <form action="/pokemon/<%=index%>?_method=PUT" method="POST">
+      name: <input type="text" name="name" value="<%=poke.name%>" /><br />
+      type: <input type="text" name="type" value="<%=poke.type%>" /><br />
+      If you mess with this value, you run the risk of breaking the image: <input type="text" name="img" value="<%=poke.img%>"/> <br />
+      hp: <input type="number" name="hp"  value="<%=poke.stats.hp%>"><br />
+      attack: <input type="number" name="attack" value="<%=poke.stats.attack%>"><br />
+      defense: <input type="number" name="defense" value="<%=poke.stats.defense%>"><br />
+      <input type="submit" name="edit" value="Submit Changes" />
+    </form>
+  </body>
+</html>

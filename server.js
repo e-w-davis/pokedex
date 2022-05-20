@@ -41,7 +41,15 @@ app.delete("/pokemon/:id", (req, res) => {
 });
 
 //U(pdate)
-
+app.get("/pokemon/:id/edit", (req, res) => {
+    res.render(
+        "edit.ejs",
+        {
+            poke: poke[req.params.id],
+            index: req.params.id,
+        }
+    )
+})
 //C(reate)
 app.post("/pokemon", (req, res) => {
     poke.push({

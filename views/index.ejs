@@ -2,7 +2,7 @@
     <h1>OG 151 Pokedex</h1>
 </header>
 <nav>
-    <a href="/pokemon/new">A Wild Pokemon Appears</a>
+    <a href="/pokemon/new">A Wild Pokemon Appears!</a>
 </nav>
 <main>
     <div class="container">
@@ -10,11 +10,15 @@
         <ul>
             <% for(let i = 0; i < poke.length; i++) {%>
                 <li>
-                    <img src=<%=poke[i].img%>></br>
-                    <a href="/pokemon/<%=i%>"><%=poke[i].name%></a>
+                    <a href="/pokemon/<%=i%>">
+                    <img alt="<%=poke[i].name%>" src=<%=poke[i].img%>>
+                </a>
+                </br>
+                    <h3><%=poke[i].name%></h3><br />
                     <form action="/pokemon/<%=i; %>?_method=DELETE" method="POST">
                         <input type="submit" value="DELETE">
                     </form>
+                    <a href="/pokemon/<%=i; %>/edit">Edit</a>
                 </li>
                 </br>
 
