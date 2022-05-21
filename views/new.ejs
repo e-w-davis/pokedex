@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title> A Wild Pokemon Appears!</title>
+ <%- include('./partials/header.ejs')%>
   </head>
   <body>
     <h1>A Wild Pokemon Appeared!</h1>
@@ -11,7 +10,7 @@
 <main class="show-main">
     <form id=info action="/pokemon" method="POST">
         name: <input type="text" name="name" placeholder="name" /> <br />
-        img: <input type="text" name="img" placeholder="add image here"/> <br />
+        img: <input type="text" name="img" value="http://img.pokemondb.net/artwork/ditto.jpg"/> <br />
         type: <input type="text" name="type" placeholder="type" /> <br />
         hp: <input type="number" name="hp"placeholder="stats.hp" /> <br />
         attack: <input type="number" name="attack" placeholder="stats.attack" /> <br />
@@ -20,4 +19,5 @@
     </form>
 </main>
 </body>
+<%- include('./partials/footer.ejs')%>
 </html>

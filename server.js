@@ -23,7 +23,10 @@ app.use(methodOverride("_method"))
 
 //I(ndex)
 app.get("/pokemon", (req, res) => {
-    res.render('index.ejs', { poke: poke });
+    res.render('index.ejs', { 
+        poke: poke,
+        tabTitle: 'Home'
+    });
 });
 
 //N(ew)
@@ -32,6 +35,12 @@ app.put("/pokemon/:id", (req, res) => {
     poke[req.params.id] = req.body
     res.redirect("/pokemon")
 })
+
+app.get("/pokemon/new", (req, res) => {
+    res.render("new.ejs",{
+    tabTitle: 'Add New',});
+});
+
 
 //D(elete)
 
@@ -47,6 +56,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
         {
             poke: poke[req.params.id],
             index: req.params.id,
+            tabTitle: 'Edit',
         }
     )
 })
@@ -55,6 +65,7 @@ app.post("/pokemon", (req, res) => {
     poke.push({
         name: req.body.name,
         type: req.body.type,
+        img: req.body.img,
         stats: {
             hp: req.body.hp,
             attack: req.body.attack,
@@ -72,15 +83,12 @@ app.post("/products", (req, res) => {
 //E(dit)
 
 //S(how)
-app.get("/pokemon/new", (req, res) => {
-    res.render("new.ejs")
-});
 
 app.get("/pokemon/:id", (req, res) => {
     res.render('show.ejs', {
         poke: poke[req.params.id],
+        tabTitle: 'More Info'
     });
-        console.log(poke)
 });
 
 // tell application to listen for requests
